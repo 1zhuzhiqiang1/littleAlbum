@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= folderName %></title>
+
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="/">全部相册</a></li>
+            <li class="active"><a href="#"><%= folderName %></a></li>
+        </ol>
+    </div>
+
+    <div class="row">
+        <% for (var i = 0;i < images.length;i++){ %>
+        <div class="col-xs-6 col-md-3">
+            <div class="thumbnail">
+                <img src="/<%= folderName %>/<%= images[i] %>" alt="">
+                <div class="caption">
+                    <h4><%= images[i] %></h4>
+                    <a class="btn btn-link" href="/<%= folderName %>/<%= images[i].split('.')[0] %>">查看</a>
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</div>
+
+</body>
+</html>
